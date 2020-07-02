@@ -85,3 +85,43 @@ h5{
   font-size: 20px;
   transition: all .3s ease-in-out;
 }
+
+@media only screen and (max-width: 1200px) {
+  body {
+    background-color: lightblue;
+  }
+  .saveBtn{
+    margin-top:3.6%
+  }
+}
+
+@media only screen and (max-width: 1000px) {
+  body {
+    background-color: rgb(203, 230, 173);
+    
+  }
+  .saveBtn{
+    margin-top: 5%;
+  }
+}
+@media only screen and (max-width: 800px) {
+body{
+  background-color: papayawhip;
+}
+.saveBtn{
+  margin-top: 6.7%;
+  border-top-left-radius: 15px;
+  border-bottom-left-radius: 15px;
+}
+}
+@media only screen and (max-width: 360px) {
+  body{
+    background-color: white;
+  }
+  .saveBtn{
+    width: 20px;
+    color: #e6a161;
+    border-top-left-radius: 15px;
+    border-bottom-left-radius: 15px;
+  }
+  }
