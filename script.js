@@ -1,8 +1,11 @@
 $(document).ready(function () {
+    myStorage = window.localStorage;
+
     let date = new Date().toDateString();
     let time = new Date().getHours();
     let row = document.querySelectorAll('.row');
-    //let time = 11;
+   
+   // let time = 8;
     function getCurrentdate() {
 
         document.getElementById('timeStamp').textContent = date;
@@ -10,97 +13,42 @@ $(document).ready(function () {
 
     }
     getCurrentdate();
-    
-    
+
+   
 
     //time management system...
-    if (time > 8) {
-        $('#8').addClass('past');
-    }
-    if (time === 8) {
-        $('#8').addClass('present');
-    }
-    if (time < 8) {
-        $('#8').addClass('future');
+    
+    
+    function setColor() {
+
+        for(let i = 8; i <= 16; i++ ){
+            if (time > i) {
+                $('#'+i).addClass('past');
+            }
+            if (time === i){
+                $('#'+i).addClass('present');
+            }
+            if (time < i) {
+                $('#'+i).addClass('future');
+            }
+        }
     }
 
-    if (time > 9) {
-        $('#9').addClass('past');
+    function hourly() {
+        setInterval(setColor, 1000 * 3);
+        //setInterval(incrementTime, 1000*10);
     }
-    if (time === 9) {
-        $('#9').addClass('present');
-    }
-    if (time < 9) {
-        $('#9').addClass('future');
-    }
-
-    if (time > 10) {
-        $('#10').addClass('past');
-    }
-    if (time === 10) {
-        $('#10').addClass('present');
-    }
-    if (time < 10) {
-        $('#10').addClass('future');
-    }
-
-    if (time > 11) {
-        $('#11').addClass('past');
-    }
-    if (time === 11) {
-        $('#11').addClass('present');
-    }
-    if (time < 11) {
-        $('#11').addClass('future');
-    }
-
-    if (time > 12) {
-        $('#12').addClass('past');
-    }
-    if (time === 12) {
-        $('#12').addClass('present');
-    }
-    if (time < 12) {
-        $('#12').addClass('future');
-    }
-
-    if (time > 13) {
-        $('#1').addClass('past');
-    }
-    if (time === 13) {
-        $('#1').addClass('present');
-    }
-    if (time < 13) {
-        $('#1').addClass('future');
-    }
-    if (time > 14) {
-        $('#2').addClass('past');
-    }
-    if (time === 14) {
-        $('#2').addClass('present');
-    }
-    if (time < 14) {
-        $('#2').addClass('future');
-    }
-    if (time > 15) {
-        $('#3').addClass('past');
-    }
-    if (time === 15) {
-        $('#3').addClass('present');
-    }
-    if (time < 15) {
-        $('#3').addClass('future');
-    }
-    if (time > 16) {
-        $('#4').addClass('past');
-    }
-    if (time === 16) {
-        $('#4').addClass('present');
-    }
-    if (time < 16) {
-        $('#4').addClass('future');
-    }
-
-    $()
-
+    $('.saveBtn').click(function (e) {
+        let index = e.target.value;
+        console.log(index);
+     
+        let x = document.getElementById('note' + index).value;
+        console.log(x);
+        document.getElementById('note' + index).value = "";
+    });
+     function incrementTime() {
+         time = time+1;
+         console.log(time); 
+     }
+    hourly();
 });
