@@ -1,0 +1,14 @@
+body{
+    margin:0;
+    padding: 0;
+}
+h1{
+    text-align: center;
+}
+.noteContainer{
+    margin: 20% 35%;
+}
+.notes{
+    border-color: black;
+    border-style: solid;
+}
