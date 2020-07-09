@@ -3,7 +3,7 @@ $(document).ready(function () {
 
    const btn = $('<button>');
     const clr = $('<button>');
-
+    const ul = $('<ul>')
    $('.noteContainer').append(btn);
    $('.noteContainer').append(clr);
    clr.text('clear data');
@@ -13,14 +13,11 @@ $(document).ready(function () {
    btn.click(function(){
     console.log(myStorage);
     for (var i = 0; i < myStorage.length; i++){
-        $('<br>');        
+       const br = $('<br>');  
+          
         $('.notes').append(myStorage.getItem(myStorage.key(i)));
+        $('.notes').append(br); 
     }
-
-    //$('.notes').append(myStorage);
-    
-   // $('.noteContainer').append(memory);
-
    });
 
    clr.click(function(){

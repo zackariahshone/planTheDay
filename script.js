@@ -37,20 +37,16 @@ $(document).ready(function () {
         let index = e.target.value;
         console.log(index);
          
-        y ++;
+        y = myStorage.length;
+
         let x = document.getElementById('note' + index).value;
         console.log(x);
         document.getElementById('note' + index).value = "";
         myStorage.setItem(y,index+" "+ x);
-        printStorage();
+   
         
     });
-    function printStorage(){
-        for (var i = 1; i < myStorage.length; i++){
-            $('.noteContainer').append(myStorage.getItem(myStorage.key(i)));
-        }
-         
-    }
+  
 
     hourly();
 

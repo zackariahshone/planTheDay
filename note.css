@@ -11,4 +11,22 @@ h1{
 .notes{
     border-color: black;
     border-style: solid;
+    background-color: yellow;
+    text-decoration: underline;
+}
+
+a{
+    
+    text-decoration: none;
+    font-size: 20px;
+    
+    border-radius: 5px;
+    color: black;
+}
+
+button{
+  height: 50px;
+  margin-left:10%;
+  border-radius: 10px;
+  background-color: tan;
 }
