@@ -1,20 +1,22 @@
 $(document).ready(function () {
    let myStorage = window.localStorage; 
 
-   const btn = $('<button>');
-    const clr = $('<button>');
-    const ul = $('<ul>')
-   $('.noteContainer').append(btn);
+   const noteBtn = $('<button>');
+   const clr = $('<button>');
+   const ul = $('<ul>');
+   $('.noteContainer').append(noteBtn);
    $('.noteContainer').append(clr);
    clr.text('clear data');
-   btn.text('push for current notes');
+   noteBtn.text('push for current notes');
 
-
-   btn.click(function(){
+   //show note
+   noteBtn.click(function(){
     console.log(myStorage);
+    if (myStorage.length === 0){
+       $('.notes').append('No notes available')
+    }
     for (var i = 0; i < myStorage.length; i++){
        const br = $('<br>');  
-          
         $('.notes').append(myStorage.getItem(myStorage.key(i)));
         $('.notes').append(br); 
     }
@@ -23,6 +25,7 @@ $(document).ready(function () {
    clr.click(function(){
     myStorage.clear();
     $('.notes').empty();
+    
     $('.notes').append('memory cleared');
    });
    
